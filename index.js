@@ -55,10 +55,10 @@ ${Variable}      <context>
 }
 
 //处理weixin原始代码块方法
-function transformToLineTemple(key, value) {
+function transformToLineTemple(key, value, isAddWx) {
 	let i = 0;
 	let variableObject = {};
-	value.insertText = "wx." + value.insertText
+	value.insertText = isAddWx?"wx.":"" + value.insertText
 			.replace(/\n/g, "&#10;").replace(/\\'/g, "")
 			.replace(/{{({[\S]*?})}}|{{(\/\/\s[\S]*?)}}|{{([\S]*?)}}/g, function (word, $1, $2, $3) {
 				let value = $1 || $2 || $3 || "";
@@ -100,10 +100,10 @@ async function getFile() {
 		`<templateSet group="wx">
 `;
 	for ([key, value] of Object.entries(module.exports.api)) {
-		lineTempFile += transformToLineTemple(key, value);
+		lineTempFile += transformToLineTemple(key, value,true);
 	}
 	for ([key, value] of Object.entries(module.exports.mina)) {
-		lineTempFile += transformToLineTemple(key, value);
+		lineTempFile += transformToLineTemple(key, value,false);
 	}
 	lineTempFile += `</templateSet>`;
 	let backString = await writeFile(path.resolve(__dirname, "dist/wx.xml"), lineTempFile);
