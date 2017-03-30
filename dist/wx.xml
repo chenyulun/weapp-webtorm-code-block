@@ -774,7 +774,7 @@
         <option name="JS_STATEMENT" value="true" />
       </context>
   </template>
-  <template name="wxA" value="wx.App({&#10;  onLaunch: function () {&#10;    $String1$&#10;  },&#10;  onShow: function () {&#10;    $String2$&#10;  },&#10;  onHide: function () {&#10;    $String3$&#10;  },&#10;  onError: function (msg) {&#10;    $String4$&#10;  }&#10;})" description="使用 App 函数来生成一个程序实例" toReformat="true" toShortenFQNames="true">
+  <template name="wxA" value="App({&#10;  onLaunch: function () {&#10;    $String1$&#10;  },&#10;  onShow: function () {&#10;    $String2$&#10;  },&#10;  onHide: function () {&#10;    $String3$&#10;  },&#10;  onError: function (msg) {&#10;    $String4$&#10;  }&#10;})" description="使用 App 函数来生成一个程序实例" toReformat="true" toShortenFQNames="true">
       <variable name="String1" expression="" defaultValue="&quot;String1&quot;" alwaysStopAt="true" />
       <variable name="String2" expression="" defaultValue="&quot;String2&quot;" alwaysStopAt="true" />
       <variable name="String3" expression="" defaultValue="&quot;String3&quot;" alwaysStopAt="true" />
@@ -783,7 +783,7 @@
         <option name="JS_STATEMENT" value="true" />
       </context>
   </template>
-  <template name="wxP" value="wx.Page({&#10;  data:{&#10;    $String1$&#10;  },&#10;  onLoad:function(options){&#10;    // 生命周期函数--监听页面加载&#10;    $String2$&#10;  },&#10;  onReady:function(){&#10;    // 生命周期函数--监听页面初次渲染完成&#10;    $String3$&#10;  },&#10;  onShow:function(){&#10;    // 生命周期函数--监听页面显示&#10;    $String4$&#10;  },&#10;  onHide:function(){&#10;    // 生命周期函数--监听页面隐藏&#10;    $String5$&#10;  },&#10;  onUnload:function(){&#10;    // 生命周期函数--监听页面卸载&#10;    $String6$&#10;  },&#10;  onPullDownRefresh: function() {&#10;    // 页面相关事件处理函数--监听用户下拉动作&#10;    $String7$&#10;  },&#10;  onReachBottom: function() {&#10;    // 页面上拉触底事件的处理函数&#10;    $String8$&#10;  },&#10;  onShareAppMessage: function() {&#10;    // 用户点击右上角分享&#10;    return {&#10;      title: '$String9$', // 分享标题&#10;      desc: '$String10$', // 分享描述&#10;      path: '$String11$' // 分享路径&#10;    }&#10;  }&#10;})" description="使用 Page 函数来生成一个页面实例" toReformat="true" toShortenFQNames="true">
+  <template name="wxP" value="Page({&#10;  data:{&#10;    $String1$&#10;  },&#10;  onLoad:function(options){&#10;    // 生命周期函数--监听页面加载&#10;    $String2$&#10;  },&#10;  onReady:function(){&#10;    // 生命周期函数--监听页面初次渲染完成&#10;    $String3$&#10;  },&#10;  onShow:function(){&#10;    // 生命周期函数--监听页面显示&#10;    $String4$&#10;  },&#10;  onHide:function(){&#10;    // 生命周期函数--监听页面隐藏&#10;    $String5$&#10;  },&#10;  onUnload:function(){&#10;    // 生命周期函数--监听页面卸载&#10;    $String6$&#10;  },&#10;  onPullDownRefresh: function() {&#10;    // 页面相关事件处理函数--监听用户下拉动作&#10;    $String7$&#10;  },&#10;  onReachBottom: function() {&#10;    // 页面上拉触底事件的处理函数&#10;    $String8$&#10;  },&#10;  onShareAppMessage: function() {&#10;    // 用户点击右上角分享&#10;    return {&#10;      title: '$String9$', // 分享标题&#10;      desc: '$String10$', // 分享描述&#10;      path: '$String11$' // 分享路径&#10;    }&#10;  }&#10;})" description="使用 Page 函数来生成一个页面实例" toReformat="true" toShortenFQNames="true">
       <variable name="String1" expression="" defaultValue="&quot;String1&quot;" alwaysStopAt="true" />
       <variable name="String2" expression="" defaultValue="&quot;String2&quot;" alwaysStopAt="true" />
       <variable name="String3" expression="" defaultValue="&quot;String3&quot;" alwaysStopAt="true" />

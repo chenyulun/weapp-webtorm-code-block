@@ -58,7 +58,7 @@ ${Variable}      <context>
 function transformToLineTemple(key, value, isAddWx) {
 	let i = 0;
 	let variableObject = {};
-	value.insertText = isAddWx?"wx.":"" + value.insertText
+	value.insertText = (isAddWx?"wx.":"") + value.insertText
 			.replace(/\n/g, "&#10;").replace(/\\'/g, "")
 			.replace(/{{({[\S]*?})}}|{{(\/\/\s[\S]*?)}}|{{([\S]*?)}}/g, function (word, $1, $2, $3) {
 				let value = $1 || $2 || $3 || "";
