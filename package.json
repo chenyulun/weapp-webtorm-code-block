@@ -1,0 +1,24 @@
+{
+  "name": "weapp-webtorm-code-block",
+  "version": "1.0.0",
+  "description": "weapp-webstrom-code-block",
+  "main": "index.js",
+  "scripts": {
+    "bulid": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyulun/weapp-webtorm-code-block.git"
+  },
+  "keywords": [
+    "weapp",
+    "weChat",
+    "wx"
+  ],
+  "author": "chenyulun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenyulun/weapp-webtorm-code-block/issues"
+  },
+  "homepage": "https://github.com/chenyulun/weapp-webtorm-code-block#readme"
+}

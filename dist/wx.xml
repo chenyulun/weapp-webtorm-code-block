@@ -1,0 +1,802 @@
+<templateSet group="wx">
+  <template name="wxRequest" value="wx.request({&#10;  url: 'https://$String1$',&#10;  data: $String2$,&#10;  method: '$String3$', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT&#10;  // header: {}, // 设置请求的 header&#10;  success: function(res){&#10;    $String4$&#10;  },&#10;  fail: function(res) {&#10;    $String5$&#10;  },&#10;  complete: function(res) {&#10;    $String6$&#10;  }&#10;})" description="发起 https 请求。一个微信小程序，同时只能有5个网络请求连接。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;URL&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;{}&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;GET&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxConnectSocket" value="wx.connectSocket({&#10;  url: 'wss://$String1$',&#10;  data: $String2$,&#10;  // header: {}, // 设置请求的 header&#10;  method: '$String3$', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT&#10;  success: function(res){&#10;    $String4$&#10;  },&#10;  fail: function(res) {&#10;    $String5$&#10;  },&#10;  complete: function(res) {&#10;    $String6$&#10;  }&#10;})" description="创建一个 WebSocket 连接。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;URL&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;{}&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;GET&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnSocketClose" value="wx.onSocketClose(function() {&#10;  $String1$&#10;})" description="监听 WebSocket 关闭。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnSocketError" value="wx.onSocketError(function() {&#10;  $String1$&#10;})" description="监听 WebSocket 错误。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnSocketMessage" value="wx.onSocketMessage(function(data) {&#10;  $String1$&#10;})" description="监听 WebSocket 接受到服务器的消息事件。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// data&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnSocketOpen" value="wx.onSocketOpen(function() {&#10;  $String1$&#10;})" description="监听 WebSocket 连接打开事件。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSendSocketMessage" value="wx.sendSocketMessage({&#10;  data: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxDownloadFile" value="wx.downloadFile({&#10;  url: 'https://$String1$',&#10;  // type: 'image', // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video&#10;  // header: {}, // 设置请求的 header&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="下载文件资源到本地。客户端直接发起一个 HTTP GET 请求，把下载到的资源根据 type 进行处理，并返回文件的本地临时路径。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;URL&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxUploadFile" value="wx.uploadFile({&#10;  url: 'https://$String1$',&#10;  filePath:'$String2$',&#10;  name:'$String3$',&#10;  // header: {}, // 设置请求的 header&#10;  // formData: {}, // HTTP 请求中其他额外的 form data&#10;  success: function(res){&#10;    $String4$&#10;  },&#10;  fail: function(res) {&#10;    $String5$&#10;  },&#10;  complete: function(res) {&#10;    $String6$&#10;  }&#10;})" description="将本地资源上传到开发者服务器。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;filePath&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCloseSocket" value="wx.closeSocket()" description="关闭 WebSocket 连接。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxChooseImage" value="wx.chooseImage({&#10;  count: $String1$, // 最多可以选择的图片张数，默认9&#10;  sizeType: [{{'original', 'compressed'}}], // original 原图，compressed 压缩图，默认二者都有&#10;  sourceType: [{{'album', 'camera'}}], // album 从相册选图，camera 使用相机，默认二者都有&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="从本地相册选择图片或使用相机拍照。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;9&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxPreviewImage" value="wx.previewImage({&#10;  // current: '$String1$', // 当前显示图片的链接，不填则默认为 urls 的第一张&#10;  urls: [$String2$],&#10;  success: function(res){&#10;    $String3$&#10;  },&#10;  fail: function(res) {&#10;    $String4$&#10;  },&#10;  complete: function(res) {&#10;    $String5$&#10;  }&#10;})" description="预览图片。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;StringArray&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetImageInfo" value="wx.getImageInfo({&#10;  src: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="获取图片信息。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;src&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStartRecord" value="wx.startRecord({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="开始录音。当主动调用 wx.stopRecord，或者录音超过1分钟时自动结束录音，返回录音文件的临时文件路径。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopRecord" value="wx.stopRecord({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="​ 主动调用停止录音。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxPlayVoice" value="wx.playVoice({&#10;  filePath: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="​开始播放语音，同时只允许一个语音文件正在播放，如果前一个语音文件还没播放完，将中断前一个语音播放。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxPauseVoice" value="wx.pauseVoice({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="​暂停正在播放的语音。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopVoice" value="wx.stopVoice({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="​结束播放语音。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetBackgroundAudioPlayerState" value="wx.getBackgroundAudioPlayerState({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="​获取音乐播放状态。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxPlayBackgroundAudio" value="wx.playBackgroundAudio({&#10;  dataUrl: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="​播放音乐，同时只能有一首音乐正在播放。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxPauseBackgroundAudio" value="wx.pauseBackgroundAudio({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="​暂停播放音乐。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSeekBackgroundAudio" value="wx.seekBackgroundAudio({&#10;  position: $String1$,&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="控制音乐播放进度。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;Number&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopBackgroundAudio" value="wx.stopBackgroundAudio({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="​停止播放音乐。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBackgroundAudioPlay" value="wx.onBackgroundAudioPlay(function() {&#10;  $String1$&#10;})" description="​监听音乐播放。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBackgroundAudioPause" value="wx.onBackgroundAudioPause(function() {&#10;  $String1$&#10;})" description="​监听音乐暂停。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBackgroundAudioStop" value="wx.onBackgroundAudioStop(function() {&#10;  $String1$&#10;})" description="​监听音乐停止。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxChooseVideo" value="wx.chooseVideo({&#10;  sourceType: ['album', 'camera'], // album 从相册选视频，camera 使用相机拍摄&#10;  // maxDuration: 60, // 拍摄视频最长拍摄时间，单位秒。最长支持60秒&#10;  camera: ['front', 'back'],&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="拍摄视频或从手机相册中选视频，返回视频的临时文件路径。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateAudioContext" value="wx.createAudioContext($String1$)&#10;" description="创建并返回 audio 上下文 audioContext 对象。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;AudioId&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateVideoContext" value="wx.createVideoContext($String1$)&#10;" description="创建并返回 video 上下文 videoContext 对象。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;VideoId&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSaveFile" value="wx.saveFile({&#10;  tempFilePath: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="保存文件到本地。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOpenDocument" value="wx.openDocument({&#10;  filePath: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="在新 webview 打开文档，支持格式：doc, xls, ppt, pdf, docx, xlsx, pptx。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetSavedFileList" value="wx.getSavedFileList({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="获取该小程序下已保存的文件列表。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetSavedFileInfo" value="wx.getSavedFileInfo({&#10;  filePath: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="获取该已保存的文件信息。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxRemoveSavedFile" value="wx.removeSavedFile({&#10;  filePath: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="删除已保存的文件。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSetStorage" value="wx.setStorage({&#10;  key: '$String1$',&#10;  data: $String2$,&#10;  success: function(res){&#10;    $String3$&#10;  },&#10;  fail: function(res) {&#10;    $String4$&#10;  },&#10;  complete: function(res) {&#10;    $String5$&#10;  }&#10;})" description="将数据存储在本地缓存中指定的 key 中，这是一个异步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;Object/String&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSetStorageSync" value="wx.setStorageSync('$String1$', $String2$)" description="将 data 存储在本地缓存中指定的 key 中，这是一个同步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;Object/String&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetStorage" value="wx.getStorage({&#10;  key: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="从本地缓存中异步获取指定 key 对应的内容，这是一个异步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetStorageSync" value="wx.getStorageSync('$String1$')" description="从本地缓存中同步获取指定 key 对应的内容，这是一个同步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxClearStorage" value="wx.clearStorage({&#10;  key: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="清理本地数据缓存，这是一个异步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxClearStorageSync" value="wx.clearStorageSync()" description="清理本地数据缓存，这是一个同步接口。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetStorageInfo" value="wx.getStorageInfo({&#10;  key: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="获取 storage 相关信息，这是一个异步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetStorageInfoSync" value="wx.getStorageInfoSync()" description="获取 storage 相关信息，这是一个同步接口。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxRemoveStorage" value="wx.removeStorage({&#10;  key: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="指定 key 删除本地数据，这是一个异步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxRemoveStorageSync" value="wx.removeStorageSync('$String1$')" description="指定 key 删除本地数据，这是一个同步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetLocation" value="wx.getLocation({&#10;  type: '$String1$', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="获取当前的地理位置、速度。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;wgs84&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOpenLocation" value="wx.openLocation({&#10;  latitude: $String1$, // 纬度，范围为-90~90，负数表示南纬&#10;  longitude: $String2$, // 经度，范围为-180~180，负数表示西经&#10;  scale: $String3$, // 缩放比例&#10;  // name: '$String4$', // 位置名&#10;  // address: '$String5$', // 地址的详细说明&#10;  success: function(res){&#10;    $String6$&#10;  },&#10;  fail: function(res) {&#10;    $String7$&#10;  },&#10;  complete: function(res) {&#10;    $String8$&#10;  }&#10;})" description="使用微信内置地图查看位置。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;Float&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;Float&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;28&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;address&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String7" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String8" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxChooseLocation" value="wx.chooseLocation({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="调起原生地图选点界面，返回用户所选的位置名称及经纬度。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateMapContext" value="wx.createMapContext($String1$)&#10;" description="创建并返回 map 上下文 mapContext 对象。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;MapId&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetNetworkType" value="wx.getNetworkType({&#10;  success: function(res) {&#10;    $String1$&#10;  }&#10;})" description="获取网络类型。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnNetworkStatusChange" value="wx.onNetworkStatusChange(function(res){&#10;  $String1$&#10;})" description="监听网络状态变化。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetSystemInfo" value="wx.getSystemInfo({&#10;  success: function(res) {&#10;    $String1$&#10;  }&#10;})" description="获取系统信息，这是一个异步接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetSystemInfoSync" value="wx.getSystemInfoSync()" description="获取系统信息，这是一个同步接口。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnAccelerometerChange" value="wx.onAccelerometerChange(function(res){&#10;  $String1$&#10;})" description="监听加速度数据，频率：5次/秒。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStartAccelerometer" value="wx.startAccelerometer({&#10;  success: function(res) {&#10;    $String1$&#10;  }&#10;})" description="开始监听加速度数据。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopAccelerometer" value="wx.stopAccelerometer({&#10;  success: function(res) {&#10;    $String1$&#10;  }&#10;})" description="停止监听加速度数据。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnCompassChange" value="wx.onCompassChange(function(res){&#10;  $String1$&#10;})" description="监听罗盘数据，频率：5次/秒。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStartCompass" value="wx.startCompass({&#10;  success: function(res) {&#10;    $String1$&#10;  }&#10;})" description="开始监听罗盘数据。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopCompass" value="wx.stopCompass({&#10;  success: function(res) {&#10;    $String1$&#10;  }&#10;})" description="停止监听罗盘数据。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxMakePhoneCall" value="wx.makePhoneCall({&#10;  phoneNumber: '$String1$',&#10;  success: function(res) {&#10;    $String2$&#10;  }&#10;})" description="拨打电话" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxScanCode" value="wx.scanCode({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="调起客户端扫码界面，扫码成功后返回对应的结果" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSetNavigationBarTitle" value="wx.setNavigationBarTitle({&#10;  title: '$String1$',&#10;  success: function(res) {&#10;    $String2$&#10;  }&#10;})" description="动态设置当前页面的标题。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxShowNavigationBarLoading" value="wx.showNavigationBarLoading()" description="在当前页面显示导航条加载动画。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxHideNavigationBarLoading" value="wx.hideNavigationBarLoading()" description="隐藏导航条加载动画。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxNavigateTo" value="wx.navigateTo({&#10;  url: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxRedirectTo" value="wx.redirectTo({&#10;  url: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="关闭当前页面，跳转到应用内的某个页面。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxNavigateBack" value="wx.navigateBack({&#10;  delta: $String1$, // 回退前 delta(默认为1) 页面&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="关闭当前页面，回退前 delta(默认为1) 页面。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSwitchTab" value="wx.switchTab({&#10;  url: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxReLaunch" value="wx.reLaunch({&#10;  url: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="打开新页面，并关闭之前所有页面" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateAnimation" value="wx.createAnimation({&#10;  duration: 400,&#10;  timingFunction: 'linear', // 'linear','ease','ease-in','ease-in-out','ease-out','step-start','step-end'&#10;  delay: 0,&#10;  transformOrigin: '50% 50% 0',&#10;  success: function(res) {&#10;    {{function code}}&#10;  }&#10;})" description="创建一个动画实例 animation。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateContext" value="wx.createContext()" description="创建并返回绘图上下文context对象。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxDrawCanvas" value="wx.drawCanvas({&#10;  canvasId: '$String1$',&#10;  actions: $String2$&#10;})" description="drawCanvas。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;actions&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCanvasToTempFilePath" value="wx.canvasToTempFilePath({&#10;  canvasId: $String1$,&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})&#10;" description="将 canvas 导出为图片，并返回临时文件路劲。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;canvasId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateCanvasContext" value="wx.createCanvasContext({&#10;  canvasId: $String1$&#10;})&#10;" description="创建 canvas 绘图上下文（指定 canvasId）" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;canvasId&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxHideKeyboard" value="wx.hideKeyboard()" description="收起键盘。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopPullDownRefresh" value="wx.stopPullDownRefresh()" description="停止当前页面下拉刷新。" toReformat="true" toShortenFQNames="true">
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxLogin" value="wx.login({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="调用接口获取登录凭证（code）进而换取用户登录态信息，包括用户的唯一标识（openid） 及本次登录的 会话密钥（session_key）。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetUserInfo" value="wx.getUserInfo({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="获取用户信息，需要先调用 wx.login 接口。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxRequestPayment" value="wx.requestPayment({&#10;  timeStamp: '$String1$',&#10;  nonceStr: '$String2$',&#10;  package: '$String3$',&#10;  signType: 'MD5',&#10;  paySign: '$String4$',&#10;  success: function(res){&#10;    $String5$&#10;  },&#10;  fail: function(res) {&#10;    $String6$&#10;  },&#10;  complete: function(res) {&#10;    $String7$&#10;  }&#10;})" description="发起微信支付。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String1&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;String2&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;String3&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;String4&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String7" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxChooseAddress" value="wx.chooseAddress({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxAddCard" value="wx.addCard({&#10;  cardList: [],&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="批量添加卡券。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOpenCard" value="wx.openCard({&#10;  cardList: [],&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="查看微信卡包中的卡券。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOpenBluetoothAdapter" value="wx.openBluetoothAdapter({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="初始化蓝牙适配器。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCloseBluetoothAdapter" value="wx.closeBluetoothAdapter({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="关闭蓝牙模块。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetBluetoothAdapterState" value="wx.getBluetoothAdapterState({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="获取本机蓝牙适配器状态。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStartBluetoothDevicesDiscovery" value="wx.startBluetoothDevicesDiscovery({&#10;  services: [$String1$],&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="开始搜寻附近的蓝牙外围设备。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;services&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxStopBluetoothDevicesDiscovery" value="wx.stopBluetoothDevicesDiscovery({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="接受搜寻附近的蓝牙外围设备。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetBluetoothDevices" value="wx.getBluetoothDevices({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="获取蓝牙设备。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBluetoothAdapterStateChange" value="wx.onBluetoothAdapterStateChange(function(res) {&#10;  $String1$&#10;})" description="监听蓝牙适配器状态变化。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBluetoothDeviceFound" value="wx.onBluetoothDeviceFound(function(res) {&#10;  $String1$&#10;})" description="监听寻找到新设备的事件。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCreateBLEConnection" value="wx.createBLEConnection({&#10;  deviceId: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="连接低功耗蓝牙设备。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;deviceId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxCloseBLEConnection" value="wx.closeBLEConnection({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="断开低功耗蓝牙设备。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetBLEDeviceServices" value="wx.getBLEDeviceServices({&#10;  deviceId: '$String1$',&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="获取蓝牙设备所有 service。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;deviceId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetBLEDeviceCharacteristics" value="wx.getBLEDeviceCharacteristics({&#10;  deviceId: '$String1$',&#10;  serviceId: '$String2$',&#10;  success: function(res){&#10;    $String3$&#10;  },&#10;  fail: function(res) {&#10;    $String4$&#10;  },&#10;  complete: function(res) {&#10;    $String5$&#10;  }&#10;})" description="获取蓝牙设备所有 characteristic" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;deviceId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;serviceId&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxReadBLECharacteristicValue" value="wx.readBLECharacteristicValue({&#10;  deviceId: '$String1$',&#10;  serviceId: '$String2$',&#10;  characteristicId: '$String3$',&#10;  success: function(res){&#10;    $String4$&#10;  },&#10;  fail: function(res) {&#10;    $String5$&#10;  },&#10;  complete: function(res) {&#10;    $String6$&#10;  }&#10;})" description="读取低功耗蓝牙设备的特征值的二进制数据值。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;deviceId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;serviceId&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;characteristicId&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxWriteBLECharacteristicValue" value="wx.writeBLECharacteristicValue({&#10;  deviceId: '$String1$',&#10;  serviceId: '$String2$',&#10;  characteristicId: '$String3$',&#10;  value: $String4$,&#10;  success: function(res){&#10;    $String5$&#10;  },&#10;  fail: function(res) {&#10;    $String6$&#10;  },&#10;  complete: function(res) {&#10;    $String7$&#10;  }&#10;})" description="向低功耗蓝牙设备特征值中写入二进制数据。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;deviceId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;serviceId&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;characteristicId&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String7" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxNotifyBLECharacteristicValueChanged" value="wx.notifyBLECharacteristicValueChanged({&#10;  deviceId: '$String1$',&#10;  serviceId: '$String2$',&#10;  characteristicId: '$String3$',&#10;  state: $String4$,&#10;  success: function(res){&#10;    $String5$&#10;  },&#10;  fail: function(res) {&#10;    $String6$&#10;  },&#10;  complete: function(res) {&#10;    $String7$&#10;  }&#10;})" description="向低功耗蓝牙设备特征值中写入二进制数据。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;deviceId&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;serviceId&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;characteristicId&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;state&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String7" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBLEConnectionStateChanged" value="wx.onBLEConnectionStateChanged(function(res) {&#10;  $String1$&#10;})" description="监听低功耗蓝牙连接状态变化。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxOnBLECharacteristicValueChange" value="wx.onBLECharacteristicValueChange(function(res) {&#10;  $String1$&#10;})" description="监听低功耗蓝牙设备的特征值变化。" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// callback&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxGetClipboardData" value="wx.getClipboardData({&#10;  success: function(res){&#10;    $String1$&#10;  },&#10;  fail: function(res) {&#10;    $String2$&#10;  },&#10;  complete: function(res) {&#10;    $String3$&#10;  }&#10;})" description="获取剪贴板内容" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxSetClipboardData" value="wx.setClipboardData({&#10;  data: $String1$,&#10;  success: function(res){&#10;    $String2$&#10;  },&#10;  fail: function(res) {&#10;    $String3$&#10;  },&#10;  complete: function(res) {&#10;    $String4$&#10;  }&#10;})" description="设置剪贴板内容" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;data&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;// success&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;// fail&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;// complete&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxA" value="wx.App({&#10;  onLaunch: function () {&#10;    $String1$&#10;  },&#10;  onShow: function () {&#10;    $String2$&#10;  },&#10;  onHide: function () {&#10;    $String3$&#10;  },&#10;  onError: function (msg) {&#10;    $String4$&#10;  }&#10;})" description="使用 App 函数来生成一个程序实例" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String1&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;String2&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;String3&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;String4&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+  <template name="wxP" value="wx.Page({&#10;  data:{&#10;    $String1$&#10;  },&#10;  onLoad:function(options){&#10;    // 生命周期函数--监听页面加载&#10;    $String2$&#10;  },&#10;  onReady:function(){&#10;    // 生命周期函数--监听页面初次渲染完成&#10;    $String3$&#10;  },&#10;  onShow:function(){&#10;    // 生命周期函数--监听页面显示&#10;    $String4$&#10;  },&#10;  onHide:function(){&#10;    // 生命周期函数--监听页面隐藏&#10;    $String5$&#10;  },&#10;  onUnload:function(){&#10;    // 生命周期函数--监听页面卸载&#10;    $String6$&#10;  },&#10;  onPullDownRefresh: function() {&#10;    // 页面相关事件处理函数--监听用户下拉动作&#10;    $String7$&#10;  },&#10;  onReachBottom: function() {&#10;    // 页面上拉触底事件的处理函数&#10;    $String8$&#10;  },&#10;  onShareAppMessage: function() {&#10;    // 用户点击右上角分享&#10;    return {&#10;      title: '$String9$', // 分享标题&#10;      desc: '$String10$', // 分享描述&#10;      path: '$String11$' // 分享路径&#10;    }&#10;  }&#10;})" description="使用 Page 函数来生成一个页面实例" toReformat="true" toShortenFQNames="true">
+      <variable name="String1" expression="" defaultValue="&quot;String1&quot;" alwaysStopAt="true" />
+      <variable name="String2" expression="" defaultValue="&quot;String2&quot;" alwaysStopAt="true" />
+      <variable name="String3" expression="" defaultValue="&quot;String3&quot;" alwaysStopAt="true" />
+      <variable name="String4" expression="" defaultValue="&quot;String4&quot;" alwaysStopAt="true" />
+      <variable name="String5" expression="" defaultValue="&quot;String5&quot;" alwaysStopAt="true" />
+      <variable name="String6" expression="" defaultValue="&quot;String6&quot;" alwaysStopAt="true" />
+      <variable name="String7" expression="" defaultValue="&quot;String7&quot;" alwaysStopAt="true" />
+      <variable name="String8" expression="" defaultValue="&quot;String8&quot;" alwaysStopAt="true" />
+      <variable name="String9" expression="" defaultValue="&quot;title&quot;" alwaysStopAt="true" />
+      <variable name="String10" expression="" defaultValue="&quot;desc&quot;" alwaysStopAt="true" />
+      <variable name="String11" expression="" defaultValue="&quot;path&quot;" alwaysStopAt="true" />
+      <context>
+        <option name="JS_STATEMENT" value="true" />
+      </context>
+  </template>
+</templateSet>
